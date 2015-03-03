@@ -9,22 +9,25 @@ namespace ServerIPs
     public class ServerIPs
     {
         private List<string> ips = new List<string>();
+        private Dictionary<string, int> ipDict = new Dictionary<string, int>();
 
-        public bool Add(string ip)
+        public void Add(string ip)
         {
-            try
-            {
-                ips.Add(ip);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            return true;
+            ips.Add(ip);
+            ipDict.Add(ip, ipDict.Count);
         }
 
         public bool remove(string ip)
+        {
+            int rmIndex = ipDict[ip];
+
+            ips[rmIndex] = ips.Last();
+            ips.RemoveAt(ips.Count - 1);
+
+            return ipDict.Remove(ip);
+        }
+
+        public bool removeOrig(string ip)
         {
             return ips.Remove(ip);
         }
