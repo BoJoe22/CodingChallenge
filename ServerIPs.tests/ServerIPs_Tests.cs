@@ -13,15 +13,16 @@ namespace ServerIPs.tests
             return string.Format("{0}.{1}.{2}.{3}", random.Next(0, 255), random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
         }
 
-        public List<string> ipList = new List<string>(1000);
-        public ServerIPs srvIPs;
+        public const int IP_LIST_SIZE = 500000;
+        public List<string> ipList = new List<string>(IP_LIST_SIZE);
+        public ServerIPs ipManager;
 
         [TestInitialize]
         public void TestsInitialize()
         {
-            srvIPs = new ServerIPs();
+            ipManager = new ServerIPs();
 
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < IP_LIST_SIZE; i++)
             {
                 ipList.Add(getRandomIp());
             }
@@ -30,21 +31,30 @@ namespace ServerIPs.tests
         [TestMethod]
         public void Add()
         {
-            Assert.IsTrue(srvIPs.Add(getRandomIp()));
+            foreach (string ip in ipList) { ipManager.Add(ip); }
+
+            Assert.IsTrue(ipManager.Add(getRandomIp()));
+            Assert.AreEqual(IP_LIST_SIZE + 1, ipManager.getIpListSize());
         }
 
         [TestMethod]
         public void Remove()
         {
             string ipToRemove = ipList[ipList.Count - 1];
+            foreach (string ip in ipList) { ipManager.Add(ip); }
 
-            Assert.IsTrue(srvIPs.remove(ipToRemove));
+            bool result = ipManager.remove(ipToRemove);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(IP_LIST_SIZE - 1, ipManager.getIpListSize());
         }
 
         [TestMethod]
         public void getRandomServer()
         {
-            string result = srvIPs.getRandomServer();
+            foreach (string ip in ipList) { ipManager.Add(ip); }
+
+            string result = ipManager.getRandomServer();
 
             Assert.IsNotNull(result);
             Assert.AreNotEqual(result, "");

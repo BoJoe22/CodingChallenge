@@ -8,19 +8,37 @@ namespace ServerIPs
 {
     public class ServerIPs
     {
+        private List<string> ips = new List<string>();
+
         public bool Add(string ip)
         {
-            return false;
+            try
+            {
+                ips.Add(ip);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public bool remove(string ip)
         {
-            return false;
+            return ips.Remove(ip);
         }
 
         public string getRandomServer()
         {
-            return null;
+            Random random = new Random();
+            int randomIndex = random.Next(ips.Count - 1);
+            return ips[randomIndex];
+        }
+
+        public int getIpListSize()
+        {
+            return ips.Count;
         }
     }
 }
