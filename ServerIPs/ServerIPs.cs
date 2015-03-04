@@ -2,43 +2,56 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ServerIPs
 {
     public class ServerIPs
     {
+        // Using a combination of List and Dictionary to take advantage of each's performance advantages
         private List<string> ips = new List<string>();
         private Dictionary<string, int> ipDict = new Dictionary<string, int>();
 
-        public bool Add(string ip)
+        /// <summary>
+        /// Add new server IP at O(3) constant time
+        /// </summary>
+        public bool Add(string ipToAdd)
         {
             IPAddress tempIp;
-            if (!IPAddress.TryParse(ip, out tempIp)) return false;
+            if (!IPAddress.TryParse(ipToAdd, out tempIp)) return false; // Check for valid IP
 
-            ips.Add(ip);
-            ipDict.Add(ip, ipDict.Count);
+            ips.Add(ipToAdd);
+            ipDict.Add(ipToAdd, ipDict.Count);
+
             return true;
         }
 
-        public bool remove(string ip)
+        /// <summary>
+        /// Newer O(5) constant time remove method
+        /// </summary>
+        public bool remove(string ipToRemove)
         {
-            if (!ipDict.ContainsKey(ip)) return false;
+            if (!ipDict.ContainsKey(ipToRemove)) return false;
 
-            int rmIndex = ipDict[ip];
+            int rmIndex = ipDict[ipToRemove];
 
-            ips[rmIndex] = ips.Last();
-            ips.RemoveAt(ips.Count - 1);
+            ips[rmIndex] = ips.Last();   // Swap IP to remove with last item in Last
+            ips.RemoveAt(ips.Count - 1); // This makes for effective removal without having to
+                                         // shuffle indexes in the Dictionary
 
-            return ipDict.Remove(ip);
+            return ipDict.Remove(ipToRemove);
         }
 
-        public bool removeOrig(string ip)
+        /// <summary>
+        /// Original O(n) linear complexity remove method
+        /// </summary>
+        public bool removeOrig(string ipToRemove)
         {
-            return ips.Remove(ip);
+            return ips.Remove(ipToRemove);
         }
 
+        /// <summary>
+        /// Get random server IP at O(3) constant time
+        /// </summary>
         public string getRandomServer()
         {
             Random random = new Random();
