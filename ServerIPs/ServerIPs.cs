@@ -14,7 +14,7 @@ namespace ServerIPs
         /// <summary>
         /// Add new server IP at O(3) constant time
         /// </summary>
-        public bool Add(string ipToAdd)
+        public bool add(string ipToAdd)
         {
             IPAddress tempIp;
             if (!IPAddress.TryParse(ipToAdd, out tempIp)) return false; // Check for valid IP
@@ -59,9 +59,14 @@ namespace ServerIPs
             return ips[randomIndex];
         }
 
-        public int getIpListSize()
+        public int getIpListSize() // helper method for tests
         {
             return ips.Count;
+        }
+
+        public bool contains(string ipToFind) // helper method for tests
+        {
+            return ips.Contains(ipToFind);
         }
     }
 }
