@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,14 +12,20 @@ namespace ServerIPs
         private List<string> ips = new List<string>();
         private Dictionary<string, int> ipDict = new Dictionary<string, int>();
 
-        public void Add(string ip)
+        public bool Add(string ip)
         {
+            IPAddress tempIp;
+            if (!IPAddress.TryParse(ip, out tempIp)) return false;
+
             ips.Add(ip);
             ipDict.Add(ip, ipDict.Count);
+            return true;
         }
 
         public bool remove(string ip)
         {
+            if (!ipDict.ContainsKey(ip)) return false;
+
             int rmIndex = ipDict[ip];
 
             ips[rmIndex] = ips.Last();
