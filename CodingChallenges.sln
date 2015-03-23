@@ -1,16 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerIPs", "ServerIPs\ServerIPs.csproj", "{4E1BA991-A144-4300-98C6-C643ABAFE2D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerIPs.tests", "ServerIPs.tests\ServerIPs.tests.csproj", "{B7AEE774-CFD8-4C60-9E6B-775867010E96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestProductInAGrid", "LargestProductInAGrid\LargestProductInAGrid.csproj", "{180D261D-80E1-48AA-877D-1CA91D81013D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestProductInAGrid.tests", "LargestProductInAGrid.tests\LargestProductInAGrid.tests.csproj", "{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}"
+EndProject
 Global
-	GlobalSection(CodealikeProperties) = postSolution
-		SolutionGuid = b9a6d88f-03ce-4276-ad69-df1e9fb3f447
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,8 +25,19 @@ Global
 		{B7AEE774-CFD8-4C60-9E6B-775867010E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7AEE774-CFD8-4C60-9E6B-775867010E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7AEE774-CFD8-4C60-9E6B-775867010E96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180D261D-80E1-48AA-877D-1CA91D81013D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180D261D-80E1-48AA-877D-1CA91D81013D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180D261D-80E1-48AA-877D-1CA91D81013D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180D261D-80E1-48AA-877D-1CA91D81013D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = b9a6d88f-03ce-4276-ad69-df1e9fb3f447
 	EndGlobalSection
 EndGlobal
