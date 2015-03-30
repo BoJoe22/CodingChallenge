@@ -63,6 +63,10 @@
       <Project>{180d261d-80e1-48aa-877d-1ca91d81013d}</Project>
       <Name>LargestProductInAGrid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LargestProductInAGrid_FSharp\LargestProductInAGrid_FSharp.fsproj">
+      <Project>{36d9fd52-abd6-4038-8018-317f32a03e5e}</Project>
+      <Name>LargestProductInAGrid_FSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -22,8 +22,12 @@ module ProductGrid =
 //        let HorResult = product(10, fun (ind, i) -> grid.[ind + i])
 //        let VerResult = product(10, fun (ind, i) -> grid.[ind + width * i])
 
-        [| grid |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex])) |> Array.max;
-           grid |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex])) |> Array.max |] |> Array.max
+        let verticalStop = grid.Length - width * productLength
+
+        [| grid |> Array.filter(fun x -> x < verticalStop && x % width < width - (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex])) |> Array.max;
+           grid |> Array.filter(fun x -> x < verticalStop && x % width > (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex])) |> Array.max;
+           grid |> Array.filter(fun x -> x % width < width - (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + itemIndex])) |> Array.max;
+           grid |> Array.filter(fun x -> x < verticalStop) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex])) |> Array.max |] |> Array.max
 
 //        maxLR grid
 //        result()

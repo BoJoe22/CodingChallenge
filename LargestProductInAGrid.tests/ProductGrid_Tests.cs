@@ -18,5 +18,16 @@ namespace LargestProductInAGrid.tests
 
             Console.WriteLine(string.Format("Max product is {0} at index {1}", max.Item2, max.Item1));
         }
+
+        [TestMethod]
+        public void TestOriginalQuestion_FSharp()
+        {
+            StreamReader sr = new StreamReader("TestData.txt");
+            string data = sr.ReadToEnd();
+
+            var max = LargestProductInAGrid_FSharp.ProductGrid.FindMaxProduct(4, data);
+
+            Console.WriteLine(string.Format("Max product [FSharp] is {0}", max));
+        }
     }
 }
