@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestProductInAGrid", "La
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestProductInAGrid.tests", "LargestProductInAGrid.tests\LargestProductInAGrid.tests.csproj", "{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LargestProductInAGrid_FSharp", "LargestProductInAGrid_FSharp\LargestProductInAGrid_FSharp.fsproj", "{36D9FD52-ABD6-4038-8018-317F32A03E5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2ECCD59-43FB-4192-AF5A-8AD11D252E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
