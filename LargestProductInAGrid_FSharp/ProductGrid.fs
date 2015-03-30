@@ -11,25 +11,24 @@ module ProductGrid =
         let grid = gridInput.Split([| Environment.NewLine; " " |], StringSplitOptions.RemoveEmptyEntries)
                    |> Array.map (fun eachChar -> Int32.Parse(eachChar))
 
-        
-        let product index gridFunction =
+        let product (index, gridFunction) =
             let rec productAcc(index, i, acc) =
                 if i = productLength then acc
                 else productAcc(index, i+1, gridFunction(index, i) * acc)
             productAcc(index, 0, 1)
 
-        let LRresult = product(10, fun (ind, i) -> grid.[ind + width * i + i])
-        let RLresult = product(10, fun (ind, i) -> grid.[ind + width * i - i])
-        let HorResult = product(10, fun (ind, i) -> grid.[ind + i])
-        let VerResult = product(10, fun (ind, i) -> grid.[ind + width * i])
+//        let LRresult = product(10, fun (ind, i) -> grid.[ind + width * i + i])
+//        let RLresult = product(10, fun (ind, i) -> grid.[ind + width * i - i])
+//        let HorResult = product(10, fun (ind, i) -> grid.[ind + i])
+//        let VerResult = product(10, fun (ind, i) -> grid.[ind + width * i])
 
-        let maxLR = Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex]))
-//                    |> Array.max
+        [| grid |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex])) |> Array.max;
+           grid |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex])) |> Array.max |] |> Array.max
 
-        grid |> maxLR()
-        1
+//        maxLR grid
+//        result()
 
-
+//
 //        let productOfLeftToRightDiagonal index =
 //            let verticalStop = grid.Length - width * productLength
 //            let rec prodLtoRDiagAcc(index, i, acc) =
