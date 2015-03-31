@@ -12,8 +12,9 @@ module ProductGrid =
 
         let product (index, gridFunction) =
             let rec productAcc(index, i, acc) =
-                if i = productLength then acc
-                else productAcc(index, i+1, gridFunction(index, i) * acc)
+                match i = productLength with
+                | true -> acc
+                | _ -> productAcc(index, i+1, gridFunction(index, i) * acc)
             productAcc(index, 0, 1)
 
         let maxOfType (filterF, productFunction) =
