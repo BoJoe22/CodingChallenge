@@ -7,7 +7,9 @@ module ProductGrid =
         let rows = gridInput.Split([| Environment.NewLine |], StringSplitOptions.RemoveEmptyEntries)
         let height = Array.length rows
         let width = rows.[0].Split(' ').Length
-        
+//        let xGrid = rows |> Array.map(fun y -> y.Split([| Environment.NewLine |], StringSplitOptions.RemoveEmptyEntries))
+//        let grid2d = Array2D.init width height (fun i j -> xGrid.[i].[j])
+
         let grid = gridInput.Split([| Environment.NewLine; " " |], StringSplitOptions.RemoveEmptyEntries)
                    |> Array.map (fun eachChar -> Int32.Parse(eachChar))
 
@@ -24,10 +26,24 @@ module ProductGrid =
 
         let verticalStop = grid.Length - width * productLength
 
-        [| grid |> Array.filter(fun x -> x < verticalStop && x % width < width - (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex])) |> Array.max;
-           grid |> Array.filter(fun x -> x < verticalStop && x % width > (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex])) |> Array.max;
-           grid |> Array.filter(fun x -> x % width < width - (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + itemIndex])) |> Array.max;
-           grid |> Array.filter(fun x -> x < verticalStop) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex])) |> Array.max |] |> Array.max
+//        [1..width*height] |> Array.filter
+
+        [| [|1..width*height|] |> Array.filter(fun x -> x < verticalStop && x % width < width - (productLength - 1)) 
+                               |> Array.map(fun index -> product(index, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex + itemIndex]))
+                               |> Array.max;
+           [|1..width*height|] |> Array.filter(fun x -> x < verticalStop && x % width > (productLength - 1))
+                               |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex]))
+                               |> Array.max;
+           [|1..width*height|] |> Array.filter(fun x -> x % width < width - (productLength - 1))
+                               |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + itemIndex]))
+                               |> Array.max;
+           [|1..width*height|] |> Array.filter(fun x -> x < verticalStop) 
+                               |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex]))
+                               |> Array.max
+        |] |> Array.max
+//           grid |> Array.filter(fun x -> x < verticalStop && x % width > (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex - itemIndex])) |> Array.max;
+//           grid |> Array.filter(fun x -> x % width < width - (productLength - 1)) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + itemIndex])) |> Array.max;
+//           grid |> Array.filter(fun x -> x < verticalStop) |> Array.mapi(fun i x -> product(i, fun (gridIndex, itemIndex) -> grid.[gridIndex + width * itemIndex])) |> Array.max |] |> Array.max
 
 //        maxLR grid
 //        result()
