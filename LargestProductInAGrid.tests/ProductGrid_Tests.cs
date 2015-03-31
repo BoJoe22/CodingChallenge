@@ -17,6 +17,8 @@ namespace LargestProductInAGrid.tests
             var max = pg.FindMaxProduct();
 
             Console.WriteLine(string.Format("Max product is {0} at index {1}", max.Item2, max.Item1));
+
+            Assert.AreEqual(70600674, max.Item2);
         }
 
         [TestMethod]
@@ -28,6 +30,8 @@ namespace LargestProductInAGrid.tests
             var max = LargestProductInAGrid_FSharp.ProductGrid.FindMaxProduct(4, data);
 
             Console.WriteLine(string.Format("Max product [FSharp] is {0}", max));
+
+            Assert.AreEqual(70600674, max);
         }
     }
 }
