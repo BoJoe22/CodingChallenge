@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerIPs", "ServerIPs\ServerIPs.csproj", "{4E1BA991-A144-4300-98C6-C643ABAFE2D7}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LargestProductInAGrid_FSharp", "LargestProductInAGrid_FSharp\LargestProductInAGrid_FSharp.fsproj", "{36D9FD52-ABD6-4038-8018-317F32A03E5E}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReverseHash", "ReverseHash\ReverseHash.fsproj", "{4156F16A-8312-4473-85D0-0609CA353AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseHash.tests", "ReverseHash.tests\ReverseHash.tests.csproj", "{7ED0A383-73C0-48A2-B9AC-D8545164914C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4156F16A-8312-4473-85D0-0609CA353AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4156F16A-8312-4473-85D0-0609CA353AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4156F16A-8312-4473-85D0-0609CA353AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED0A383-73C0-48A2-B9AC-D8545164914C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED0A383-73C0-48A2-B9AC-D8545164914C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED0A383-73C0-48A2-B9AC-D8545164914C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED0A383-73C0-48A2-B9AC-D8545164914C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
