@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestProductInAGrid.tests
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LargestProductInAGrid_FSharp", "LargestProductInAGrid_FSharp\LargestProductInAGrid_FSharp.fsproj", "{36D9FD52-ABD6-4038-8018-317F32A03E5E}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReverseHash", "ReverseHash\ReverseHash.fsproj", "{4156F16A-8312-4473-85D0-0609CA353AAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D9FD52-ABD6-4038-8018-317F32A03E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4156F16A-8312-4473-85D0-0609CA353AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4156F16A-8312-4473-85D0-0609CA353AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4156F16A-8312-4473-85D0-0609CA353AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4156F16A-8312-4473-85D0-0609CA353AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
