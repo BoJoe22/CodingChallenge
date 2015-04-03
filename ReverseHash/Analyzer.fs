@@ -6,7 +6,8 @@ module Analyzer =
     let letters = [| 'a'; 'c'; 'd'; 'e'; 'g'; 'i'; 'l'; 'm'; 'n'; 'o'; 'p'; 'r'; 's'; 't'; 'u'; 'w' |]
 
     let hash (s) =
-        Array.fold(fun acc letter -> acc * 37 + (Array.findIndex(fun l -> letter = l) letters)) 7 (s) 
+//        Array.fold(fun acc letter -> acc * 37 + (Array.findIndex(fun l -> letter = l) letters)) 7 (s) 
+        Array.fold(fun acc letter -> acc * int64(37) + int64(Array.findIndex(fun l -> letter = l) letters)) (int64(7)) (s) 
 //        let rec hashAcc (acc, i, stop) =
 //            if i = stop then acc
 //            else hashAcc(acc * 37 + Array.findIndex(s.[i]), )
@@ -43,7 +44,7 @@ module Analyzer =
 //    let permutations = combinations [] 7 (Array.toList letters)
     let permutations = permutationBuilder [] 7 (letters)
 
-//    let countPermutations = Seq.length permutations
+    let countPermutations = Seq.length permutations
 
 //    let countPermutations2 = getPermsWithRep 7 (Array.toList letters) |> Seq.length
 
@@ -56,6 +57,10 @@ module Analyzer =
 //                     |> Seq.find(fun x -> hashToFind = int64(hash(x)))
 //                     
 //        new String(result)
-        permutations |> Seq.find(fun x -> let hashCalculated = int64(hash(x))
-                                          Console.WriteLine(String.Format("Looking for {0}. Comparing to {1}", hashCalculated, hashToFind))
-                                          hashToFind = hashCalculated)
+//        let file = new IO.StreamWriter("C:\\Users\\JosefKoza\\Desktop\\AnalyzerOut.txt")
+//        file.WriteLine(String.Format("Looking for {0}", hashToFind))
+        let result = permutations |> Seq.find(fun x -> let hashCalculated = int64(hash(x))
+//                                                       file.WriteLine(String.Format(" > {0}", hashCalculated))
+//                                          Console.WriteLine(String.Format("Looking for {0}. Comparing to {1}", hashCalculated, hashToFind))
+                                                       hashToFind = hashCalculated)
+        result |> String.Concat

@@ -7,19 +7,27 @@ namespace ReverseHash.tests
     public class Analyzer_Tests
     {
         [TestMethod]
-        public void test_findString()
+        public void test_findString_leepadg()
         {
-            var result = Analyzer.findString(680131659347);
-            Console.WriteLine(string.Format("Result was \"{0}\""), result);
+            var result = String.Concat(Analyzer.findString(680131659347));
+
+            Assert.AreEqual("leepadg", result);
+        }
+
+        [TestMethod]
+        public void test_findString_originalQuestion_spartan()
+        {
+            var result = Analyzer.findString(696005871397);
+
+            Assert.AreEqual("spartan", result);
         }
 
         [TestMethod]
         public void test_countPermutations()
         {
-            //var count = Analyzer.countPermutations;
-            //Console.WriteLine(string.Format("Number of permutations is {0}"), count);
+            var count = Analyzer.countPermutations;
 
-            //Assert.AreEqual(57657600, count);
+            Assert.AreEqual(57657600, count);
         }
 
         [TestMethod]
