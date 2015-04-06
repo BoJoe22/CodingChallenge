@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ReverseHash.tests
@@ -33,10 +34,9 @@ namespace ReverseHash.tests
         [TestMethod]
         public void test_getPermsWithRep()
         {
-            //var count = Analyzer.countPermutations2;
-
-            //Console.WriteLine(string.Format("Number of permutations is {0}", count));
-            //Assert.AreEqual(57657600, count);
+            //var count = Analyzer.countPermutations;
+            //var count2 = Analyzer.countPermutations2;
+            //Assert.IsTrue(count == count2);
         }
     }
 }
