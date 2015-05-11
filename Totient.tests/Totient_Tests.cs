@@ -12,7 +12,7 @@ namespace CodeChallenge.tests
         public void test_gcd()
         {
             var expected = 5;
-            var result = Totient.gcd(1000000, 986455);
+            var result = Totient.greatestCommonDenominator(1000000, 986455);
 
             Assert.AreEqual(expected, result);
         }
@@ -62,26 +62,34 @@ namespace CodeChallenge.tests
         {
             var expected = 4.375;
             var result = Totient.MaxNoverPhi(1000);
-            //Console.WriteLine(String.Format("Max N is {0}", result));
 
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// Test brute-force calculation
+        /// </summary>
+        /// <remarks>This takes a really really really long time to calculate</remarks>
         [TestMethod]
         public void test_MaxNoverPhi_upTo1000000()
         {
-            //var expected = 4.375;
-            var result = Totient.MaxNoverPhi(100000);
-            Console.WriteLine(String.Format("Max N over Phi is {0}", result));
+            var expected = 510510.0 / 92160;
+            var result = Totient.MaxNoverPhi(1000000);
 
-            //Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// Test more effective straight calculation
+        /// </summary>
         [TestMethod]
         public void test_MaxPhi_upTo1000000()
         {
+            var expected = 510510.0 / 92160;
             var result = Totient.MaxPhi(1000000);
-            Console.WriteLine(String.Format("Max N is {0}", result));
+            Console.WriteLine(String.Format("Max N over Phi is {0}", result));
+
+            Assert.AreEqual(expected, result);
         }
     }
 }
