@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Totient.tests", "Totient.te
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz", "FizzBuzz\FizzBuzz.fsproj", "{185CE242-40D5-4FFC-859D-AFC16F335816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StonePiles", "StonePiles\StonePiles.csproj", "{B0170E5F-1DA2-4CC6-ABB6-C4DC774F6AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StonePiles.tests", "StonePiles.tests\StonePiles.tests.csproj", "{EFFE0606-BFB5-4996-B1EA-2C93694536D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{185CE242-40D5-4FFC-859D-AFC16F335816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{185CE242-40D5-4FFC-859D-AFC16F335816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{185CE242-40D5-4FFC-859D-AFC16F335816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0170E5F-1DA2-4CC6-ABB6-C4DC774F6AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0170E5F-1DA2-4CC6-ABB6-C4DC774F6AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0170E5F-1DA2-4CC6-ABB6-C4DC774F6AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0170E5F-1DA2-4CC6-ABB6-C4DC774F6AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFE0606-BFB5-4996-B1EA-2C93694536D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFE0606-BFB5-4996-B1EA-2C93694536D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFE0606-BFB5-4996-B1EA-2C93694536D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFE0606-BFB5-4996-B1EA-2C93694536D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
