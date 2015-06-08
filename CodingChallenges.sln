@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerIPs", "ServerIPs\ServerIPs.csproj", "{4E1BA991-A144-4300-98C6-C643ABAFE2D7}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Totient", "Totient\Totient.fsproj", "{D668D75E-A41C-4145-838A-6640A551DBA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Totient.tests", "Totient.tests\Totient.tests.csproj", "{F7285622-92BC-4CF8-A3EE-6D0C45ADCDE3}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz", "FizzBuzz\FizzBuzz.fsproj", "{185CE242-40D5-4FFC-859D-AFC16F335816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F7285622-92BC-4CF8-A3EE-6D0C45ADCDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7285622-92BC-4CF8-A3EE-6D0C45ADCDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7285622-92BC-4CF8-A3EE-6D0C45ADCDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185CE242-40D5-4FFC-859D-AFC16F335816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185CE242-40D5-4FFC-859D-AFC16F335816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185CE242-40D5-4FFC-859D-AFC16F335816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185CE242-40D5-4FFC-859D-AFC16F335816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
